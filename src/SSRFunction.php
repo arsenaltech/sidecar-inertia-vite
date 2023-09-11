@@ -77,7 +77,7 @@ class SSRFunction extends LambdaFunction
         $process = new Process(explode(' ', $command), $cwd = base_path(), $env = []);
 
         // mustRun will throw an exception if it fails, which is what we want.
-        $process->setTimeout(60)->disableOutput()->mustRun();
+        $process->setTimeout(60)->mustRun();
 
         Sidecar::log('Build: JavaScript SSR bundle compiled!');
     }
@@ -99,7 +99,7 @@ class SSRFunction extends LambdaFunction
         $process = new Process(explode(' ', $command), $cwd = base_path(), $env = []);
 
         // mustRun will throw an exception if it fails, which is what we want.
-        $process->setTimeout(60)->disableOutput()->mustRun();
+        $process->setTimeout(60)->mustRun();
 
         Sidecar::log('Optimizing bundle: Package bundled with NCC!');
     }
